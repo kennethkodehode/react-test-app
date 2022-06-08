@@ -1,0 +1,43 @@
+.App-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+
+  @media (min-width: 26rem) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__brand {
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 1em;
+
+    &__item {
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 1rem;
+        height: 0.0625em;
+        background-color: blue;
+        transition: .3s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
